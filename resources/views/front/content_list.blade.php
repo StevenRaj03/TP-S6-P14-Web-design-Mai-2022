@@ -1,4 +1,5 @@
 @extends('front.layouts.app')
+@section('content')
 
 <!-- ##### Breaking News Area Start ##### -->
 <section class="breaking-news-area">
@@ -982,3 +983,4 @@
     </div>
 </div>
 <!-- ##### Add Area End ##### -->
+@endsection

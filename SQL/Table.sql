@@ -9,8 +9,7 @@ CREATE  TABLE "public".contenu (
 	titre                varchar(50)  NOT NULL  ,
 	visuel               text    ,
 	body                 text    ,
-	date1          		 timestamp  NOT NULL  ,
-	date2             	 timestamp   ,
+	"date"               timestamp  NOT NULL  ,
 	lieu                 varchar(50)    ,
 	idprofil 	         integer not null,
 	idcategorie 	     integer not null,
@@ -32,6 +31,6 @@ CREATE  TABLE "public"."type_profil" (
 	CONSTRAINT pk_type_profil PRIMARY KEY ( id )
  );
 
-ALTER TABLE profil ADD FOREIGN KEY idtype_profil REFERENCES type_profil (id);
-ALTER TABLE contenu ADD FOREIGN KEY idprofil REFERENCES profil (id);
-ALTER TABLE contenu ADD FOREIGN KEY idcategorie REFERENCES categorie (id);
+ALTER TABLE profil ADD FOREIGN KEY (idtype_profil) REFERENCES type_profil (id);
+ALTER TABLE contenu ADD FOREIGN KEY (idprofil) REFERENCES profil (id);
+ALTER TABLE contenu ADD FOREIGN KEY (idcategorie) REFERENCES categorie (id);
